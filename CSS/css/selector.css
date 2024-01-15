@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+div[name="name-1"]{
+    background-color:red;
+}
+
+p[name="name-1"]{
+    background-color:green;
+}
+
+[name="name-2"]{
+    background-color:blue;
+}
+
+
+
+ul > li{
+    color:red;
+}
+
+/* 자식 선택자 */
+
+
+
+#parent-ul > li{
+    background-color:orange;
+}
+
+#parent-ul > li > span{
+    background-color:blue;
+}
+
+
+/* 후손 선택자*/
+
+#test-div p{
+    background-color:yellowgreen; 
+}
+
+
+
+.div_cls{
+  border:1px solid black;
+  width:200px;
+  height:200px;
+  background-color:rgb(77, 77, 78);
+  margin-bottom:30px;
+  cursor: pointer;
+
+}
+
+#active-test:active{
+    background-color:yellow;
+}
+
+#active-test:hover #hover-test{
+    background-color:yellow;
+}
+
+#hover-test:hover{
+    background-color:blue;
+    width:230px;
+    height:230px;
+}
+
+#focus-test:focus{background-color:red;}
+
+[name="fruits"]:checked{
+    width:30px;
+    height:30px;
+    background-color:red;
+}
+
+#test-div2 > input:nth-of-type(2){
+    background-color:lightcoral
+}
+
+#test-div2 > input:nth-of-type(1){
+    background-color:lightgreen
+}
+
+#div1 + div{
+    background-color:olive
+}
+
+#div3 ~ div{
+    background-color:blue;
+}
+
+
+
+
+
+
