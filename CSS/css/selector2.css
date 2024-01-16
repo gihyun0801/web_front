@@ -65,7 +65,7 @@ ul > li{
 
 #focus-test:focus{background-color:red;}
 
-[name="fruits"]:checked{
+input[name="fruits"]:checked{
     width:30px;
     height:30px;
     background-color:red;

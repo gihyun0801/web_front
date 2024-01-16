@@ -1,0 +1,61 @@
+@charset "utf-8";
+div{
+    border:1px solid black;
+    box-sizing: border-box;
+}
+
+.container-1{
+    border:2px solid red;
+    position:relative;
+
+}
+
+.first{
+    width:300px;
+    height:300px;
+    background-color: yellow;
+}
+
+.second{
+    width:200px;
+    height:200px;
+    background-color: green;
+    position:absolute;
+    top:50px;
+    left:50px;
+}
+
+.third{
+    width:100px;
+    height:100px;
+    background-color: red;
+
+    position:absolute;
+    top:100px;
+    left:100px;
+}
+
+.container-2{
+    width:500px;
+    height:500px;
+
+}
+
+#center{
+    width:150px;
+    height:150px;
+    background-color: pink;
+    position:relative;
+    left:50%;
+    top:50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.fixed-area{
+    width:120px;
+    position:fixed;
+    bottom:50px;
+    right:50px;
+}
+    
