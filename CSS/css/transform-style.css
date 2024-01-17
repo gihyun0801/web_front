@@ -1,0 +1,147 @@
+@charset "utf-8";
+
+img{
+    width:250px;
+    
+}
+
+/* transform : 변형과 관련된 속성 */
+
+/* 
+css 속성 작성 시 크로스 브라우저 처리 방법(브라우저가 달라지는 경우)
+
+
+-ms- : 마이크로 소프트(익스플로어, 엣지)
+-webkit- : 크롬, 사파리
+-o- : 오페라
+-moz- 파이어폭스
+
+*/
+
+/* 좌우 이동 */
+.trans-x-2d:hover{
+-webkit-transform: translateX(100px);
+}
+
+.trans-y-2d:hover{
+    transform:translateY(100px);
+}
+.trans-xy-2d:hover{
+    transform:translate(100px, 100px);
+}
+
+.trans-x-scale-2d:hover{
+    transform:scaleX(2);
+    margin-left:200px;
+}
+.trans-y-scale-2d:hover{
+    transform:scaleY(2);
+    
+}
+.trans-xy-scale-2d:hover{
+    transform:scale(2);
+    margin:150px 150px;
+    
+}
+
+.trans-rotate:hover{
+    transform:rotate(180deg);
+}
+
+.trans-3d:hover{
+    transform:perspective(200px) translate3d(100px, 100px, 100px);
+}
+
+.trans-rotate-x-3d{
+    transform:perspective(200px) rotateX(45deg)
+}
+
+.trans-rotate-y-3d{
+    transform:perspective(200px) rotateY(45deg)
+}
+
+.trans-rotate-z-3d{
+    transform:perspective(200px) rotateZ(45deg)
+}
+   
+/* transition */   
+
+.box{
+    width:150px;
+    height:150px;
+    background-color: red;
+    border:1px solid black;
+    transition:1s linear;
+}
+
+.test1:hover {
+    background-color:yellow;
+}
+
+.test2:hover{
+    transform:rotate(360deg);
+    background-color:skyblue;
+    border-radius: 100px;
+}
+
+.test3:hover{
+    background-color: palegreen;
+    transform:rotate(720deg)
+}
+
+.test3{
+    transition:3s ease-in-out;
+}
+
+.test4:hover{
+
+ transform:perspective(100px) translate3d(100px, 100px, 200px)
+}
+
+
+#box{
+
+    width:500px;
+    height:300px;
+    
+   
+}
+
+.style_box1, .style_box2{
+    transition:1s linear;
+    backface-visibility: hidden;
+    position:absolute;
+    width:50%;
+    height:300px;
+    text-align: center;
+    left:20%;
+    line-height:300px;
+   
+    
+}
+
+span{font-size:30px;
+    color:white;
+    text-shadow: 1px 1px 5px #e0e0e0,
+                  3px -2px 5px orange;
+}
+
+.style_box1{
+    background-color:red;
+;transition:1s linear}
+
+    .style_box2{
+        background-color: rgb(0, 0, 0);
+        transform:rotateY(180deg);transition:1s linear
+    }
+
+    #box:hover .style_box1{
+        transform:rotateY(180deg)
+    }
+
+    #box:hover .style_box2{
+       
+        transform:rotateY(0deg);transition:1s linear
+    }
+
+   
