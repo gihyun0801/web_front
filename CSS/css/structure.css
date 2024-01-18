@@ -1,0 +1,293 @@
+@charset "utf-8";
+li{list-style: none}
+*{margin:0;padding:0;box-sizing: border-box;border:1px solid black;
+border:none;}
+
+#home-logo{
+    width:120px;
+}
+
+header >section:nth-of-type(1){
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    width:1140px;
+    margin:0 auto;
+}
+
+header{
+    height:200px;
+    display:flex;
+}
+
+header > section:nth-of-type(1),
+header > section:nth-of-type(3){
+    flex-basis: 15%;
+}
+header > section:nth-of-type(2){
+    flex-basis: 70%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+   
+/* 검색 스타일 */
+
+.search-area{
+    width:500px;
+}
+
+.search-area fieldset{
+    border:2px solid #455ba8;
+    border-radius: 5px;
+    padding:2px;
+    display:flex;
+}
+
+#query{
+    padding:10px;
+    font-size:18px;
+    font-weight:bold;
+    border:none;
+    outline: none;
+    /* outline : input 태그에 포커스가 맞춰졋을때 이를 표현하기 위한 바깥선 */
+    flex-basis: 92%;
+}
+
+#search-btn{
+    flex-basis: 8%;
+    border:none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size:20px;
+    /* 아이콘의 크기 변경할땐 폰트 사이즈를 바꿔야된다 아이콘의 색깔을 바꿀떄는 color 를 넣어줘야된다 */
+    color:#455ba8
+}
+
+
+/* nav  */
+nav{
+   height:50px; 
+   border-bottom:2px solid #455ba8;
+   position:sticky;
+   top:0; /* 최상단에 붙힘 */
+   background-color: white;
+
+
+   /* sticky : 스크롤이 임계점에 도달했을 때 화면에 스티키처럼 붙임 평소에는 static (기본 position 상태) 임계점 도달 시 fixed *
+   top, bottom, left, right 속성이 필수로 작성 되어있어야한다 */
+
+   
+}
+
+
+nav >ul{
+    display:flex;
+    height:100%;
+}
+
+nav li{
+    flex-basis:150px;
+    text-align: center;
+    line-height: 50px;
+   
+}
+
+nav a {
+    text-decoration: none;
+    font-size:18px;
+    font-weight:bold;
+    color:black;
+    height:100%;
+    display:block;
+    transition:0.2s;
+    border-radius: 5px;
+  
+}
+
+nav a:hover{
+    background-color:#455ba8;
+    color:white;
+}
+
+.content{
+    height:800px;
+    display:flex;
+}
+
+.content-1{
+    flex-basis: 70%;
+}
+.content-2{
+    flex-basis:30%;
+}
+
+/* login 스타일 */
+form[name=login-form]{
+    height:150px;
+    padding:10px;
+    margin-top:10px;
+    display:flex;
+    flex-direction: column;
+   
+}
+
+input[name=input-id]{
+    border:1px solid black;
+}
+input[name=input-pw]{
+    border:1px solid black;
+}
+
+form[name=login-form] > label{
+    margin-top:5px;
+    font-size:14px;
+    flex-basis: 20%;
+}
+
+#signup-find-area{
+    flex-basis: 20%;
+   
+    padding-left:5px;
+}
+
+#signup-find-area > a{
+    color:black;
+    text-decoration: none;
+    font-size:14px;
+}
+
+#signup-find-area > span{
+    padding:0px 10px;
+}
+
+#id-pw-area{
+    flex-basis: 60%;
+    display:flex;
+    border:1px solid #ddd;
+}
+
+#id-pw-area > section:nth-of-type(1){
+    flex-basis: 75%;
+    display:flex;
+    flex-direction: column;
+}
+#id-pw-area > section:nth-of-type(2){
+    flex-basis: 25%;
+    display:flex;
+}
+
+#id-pw-area input{
+    padding:5px;
+    border:none;
+    outline: none;
+    flex-basis: 50%;
+}
+
+#id-pw-area input:nth-of-type(1){
+    border-bottom:1px solid #ddd;
+    border-right:1px solid #ddd;
+}
+
+#id-pw-area input:nth-of-type(1):focus{
+    border:2px solid #455ba8
+}
+#id-pw-area input:nth-of-type(2):focus{
+    border:2px solid #455ba8
+}
+
+#id-pw-area input:nth-of-type(2){
+    border-right:1px solid #ddd;
+}
+
+#btn{
+    flex-basis: 100%;
+    background-color: #14ce52;
+    color:white;
+    cursor: pointer;
+    border:none;
+}
+
+
+
+
+
+
+footer{
+    background:linear-gradient(180deg, #e7a26f 23%, #58dbd5 107%);
+    height:150px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight:bold;
+   
+}
+
+footer a {
+    text-decoration: none;;
+    color:inherit
+}
+footer > p{
+    margin-bottom:30px
+}
+
+/* 반응형 모바일 기준 */
+
+@media screen and (max-width:767px){
+    main {
+        width:100vw;
+    }
+
+    header{
+        display:none;
+    }
+
+    nav{
+        width:100%;
+        border-bottom:none;
+        height:auto;
+    }
+
+    nav > ul{
+        display:flex;
+        flex-direction: column;
+        
+    }
+
+    nav  li{
+        flex-basis:auto;
+        border-bottom:1px solid #ddd
+    }
+
+    .content{
+        flex-direction: column;
+        height:271px
+    }
+    .content-1{
+        display:none;
+        
+    }
+
+    footer{
+        font-size:12px;
+    }
+
+    form[name=login-form] {
+        height: 270px;
+        padding: 10px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media screen and (min-width:768px) and (max-width:1023px){
+        /* 태블릿 모드 */
+
+        
+    }
+
+}
