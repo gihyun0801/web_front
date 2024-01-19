@@ -75,6 +75,7 @@ nav{
    position:sticky;
    top:0; /* 최상단에 붙힘 */
    background-color: white;
+   position:
 
 
    /* sticky : 스크롤이 임계점에 도달했을 때 화면에 스티키처럼 붙임 평소에는 static (기본 position 상태) 임계점 도달 시 fixed *
