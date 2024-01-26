@@ -1,3 +1,4 @@
+
 /* 인라인 이벤트 모델 확인 */
 function check1 (btn){
 
