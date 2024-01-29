@@ -70,3 +70,59 @@ inputPw.addEventListener("keyup", (e) => {
     }
 })
 
+const inputName = document.querySelector("#inputName");
+const span2 = document.querySelector("#span2");
+
+inputName.addEventListener("keyup", (e) => {
+
+ const str = /^[ㄱ-힣]{2,5}$/;
+
+  
+ if(str.test(e.target.value)){
+    span2.innerText = "정상입력";
+    span2.classList.add("color-green")
+    span2.classList.remove;("color-red");
+ }else{
+    span2.classList.add("color-red");
+    span2.classList.remove("color-green");
+    span2.innerText = "한글만 입력하세요"
+ }
+})
+
+const btn1 = document.querySelector("#button1").addEventListener("click", (e) => {
+    e.preventDefault()
+    valiedate();
+})
+
+
+
+function valiedate(){
+const radio = document.querySelectorAll(".radio");
+
+for(let i = 0; i < radio.length; i++){
+    
+    if(radio[i].checked){
+      
+    }else{
+        alert("성별을 선택해주세요");
+        
+        return;
+    }
+}
+
+    
+
+}
+
+const inputNumber = document.querySelector("#inputNumber");
+const span3 = document.querySelector("#span3")
+const str = /^[0][0-9]{1,2}\-[0-9]{1,4}\-[0-9]{1,4}$/;
+inputNumber.addEventListener("keyup", (e) => {
+   
+
+    if(str.test(e.target.value)){
+       span3.innerText = "올바른 전화번호 방식입니다"
+    }else{
+        alert("전화번호의 형식이 올바르지 않습니다")
+    }
+})
