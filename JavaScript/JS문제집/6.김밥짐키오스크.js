@@ -1,5 +1,6 @@
 let sum = 0;
 
+
 function addToCart(menu, price) {
    
    let gimbap = 0; 
@@ -11,37 +12,9 @@ function addToCart(menu, price) {
 
 
 
-   switch(menu){
-      case '김밥':
-      gimbap += 3000;
-      break
-      
-      case '라면':
-      ramen += 4500;
-      break
+   let count = 1;
 
-      case '튀김':
-      twigim += 5000;
-      break
-
-      case '떡볶이':
-        dduk += 6000;
-      break
-
-      case '돈까스':
-        dongas += 7500;
-      break
-
-      case '우동':
-        wudong += 5000;
-      break
-      
-      default:
-        break
-      
-   }
   
-
    const cart = document.querySelector("#cart");
 
    const emptyCart = document.querySelector("#empty-cart");
@@ -69,10 +42,17 @@ function addToCart(menu, price) {
    btn2.innerText = '-';
    const span4 = document.createElement("span");
    span4.innerHTML = 1;
+   span4.classList.add("chu");
    const span5 = document.createElement("span");
    span5.classList.add("delete-button");
    span5.innerHTML = `&times`;
    span3.append(span5);
+
+
+
+
+
+ 
 
    
    span2.append(btn1, span4, btn2);
@@ -81,7 +61,7 @@ function addToCart(menu, price) {
    cartItem.append(span1, span2, span3);
    cart.append(cartItem);
 
-   let count = 1;
+  
 
    sum += price;
 
@@ -89,26 +69,47 @@ function addToCart(menu, price) {
     count++;
     sum += price;
     span4.innerHTML = count;
+    
     total.innerHTML = `합계: ₩${sum}`;
+    
+ 
+
+ 
    })
 
+
+
    btn2.addEventListener("click", (e) => {
+ 
+  
+   
+
+   if(count > 0){
     count--;
-    if(count < 0){
-       count = 0;
-    }
     span4.innerHTML = count;
+    
     sum -= price;
+   }
+
     if(sum < 0){
         sum = 0;
     }
-    
+   
     total.innerHTML = `합계: ₩${sum}`;
    })
 
+   
+  
    span5.addEventListener("click", (e) => {
-     e.target.parentNode.parentNode.remove()
+     e.target.parentNode.parentNode.remove();
+       
+  
+   const quan = span4.textContent;
+  sum -= quan * price;
+  total.innerHTML = `합계: ₩${sum}`;
    })
+  
+
    
    const total = document.querySelector("#total");
    
