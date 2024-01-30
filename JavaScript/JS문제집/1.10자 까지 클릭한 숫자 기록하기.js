@@ -1,20 +1,24 @@
-const btn = document.querySelector("#reset");
-const nums = document.querySelectorAll(".number");
-const result = document.querySelector("#result");
+const numbers = document.querySelectorAll(".number");
+
+const span = document.querySelector("#result");
+
+const reset = document.querySelector("#reset");
 
 
-btn.addEventListener("click" , () => {
 
-    result.innerHTML = '';
- 
- })
+for(let i = 0; i < numbers.length; i++){
+    
 
-
- for(let i = 0; i < nums.length; i++){
-    nums[i].addEventListener("click", (e) => {
-        result.innerHTML += e.target.innerHTML;
+    numbers[i].addEventListener("click", (e) => {
+         span.innerHTML += numbers[i].textContent
     })
- }
+   
+    
+}
+
+reset.addEventListener("click", (e) => {
+    span.innerHTML = ''
+})
  
 
 

@@ -1,46 +1,41 @@
+const input = document.querySelector("#text");
+
 const btn = document.querySelector("#btn");
-const container = document.querySelector("#container");
-const text = document.querySelector("#text");
-const result = document.querySelector("#result")
+
+const result = document.querySelector("#result");
+
+
 
 btn.addEventListener("click", (e) => {
 
-    if(text.value.trim().length == 0 || isNaN(Number(text.value))){
-        alert("갯수를 입력하세요");
-        return;
-    }
+   const container = document.querySelector("#container");
+   
+   for(let i = 0; i < Number(input.value); i++){
+     
+    const inputNumber = document.createElement("input");
+    inputNumber.classList.add("input-number");
+    inputNumber.setAttribute("type","number");
 
-    for(let i = 0; i < Number(text.value); i++){
-       
-   const input = document.createElement("input");
+    container.append(inputNumber);
+   } 
 
-   input.setAttribute("type", "number");
-   input.classList.add("input-number");
+  
 
    
-   container.append(input);
-    }
-
-
-
 
 
 
 })
 
 function on(){
-    let sum = 0
-    const boxs = document.querySelectorAll(".input-number")
-  
+    const inputsBox = document.querySelectorAll(".input-number");
 
+    let sum = 0;
 
-    for(let i = 0; i < Number(text.value); i++){
-        sum += Number(boxs[i].value)
+    for(let i = 0; i < inputsBox.length; i++){
+        sum += Number(inputsBox[i].value);
     }
 
-
-
-    result.innerText = sum;
-
+    result.innerHTML = `합은 : ${sum}입니다`
 
 }

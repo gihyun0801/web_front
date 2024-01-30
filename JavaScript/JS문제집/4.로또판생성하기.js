@@ -1,28 +1,32 @@
 const createBtn = document.querySelector("#createBtn");
-const lottoBoard = document.querySelector("#lottoBoard");
-lottoBoard.style.display = "flex";
-lottoBoard.style.flexColumn = "10px";
-lottoBoard.style.flexWrap = "wrap";
+const lottoBoard = document.querySelector("#lottoBoard")
 
+createBtn.addEventListener("click", (e) => {
+   const array = new Array(45);
 
-createBtn.addEventListener("click", () => {
+   for(let i = 0; i < array.length; i++){
+      const number = document.createElement("div");
+      number.classList.add("number");
+      number.innerText = [i];
 
-
-
-   const str = new Array(30);
-
-   for(let i = 0; i < str.length; i++){
-      const div = document.createElement("div");
-      div.style.borderRadius = "50px";
-      div.style.border = "1px solid black";
-      div.style.width = "50px";
-      div.style.height = "50px";
-
-      div.innerText = `${i}`;
-      lottoBoard.append(div);
+      lottoBoard.append(number);
    }
 
+   const boxs = document.querySelectorAll(".number");
+  
+   for(let i = 0; i < boxs.length; i++){
 
-
-
+      boxs[i].addEventListener("click", (e) => {
+            boxs[i].style.backgroundColor = "orange"
+      })
+   
+   }
+    
 })
+
+
+
+
+
+
+
